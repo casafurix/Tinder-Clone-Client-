@@ -12,9 +12,12 @@ function MatchesDisplay({ matches, setClickedUser }) {
 
   const getMatches = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/users", {
-        params: { userIds: JSON.stringify(matchedUserIds) },
-      });
+      const response = await axios.get(
+        "https://tinder-casafurix.herokuapp.com/users",
+        {
+          params: { userIds: JSON.stringify(matchedUserIds) },
+        }
+      );
       setMatchedProfiles(response.data);
     } catch (err) {
       console.log(err);

@@ -27,7 +27,9 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
       }
       // console.log("Make a post request to our database");
       const response = await axios.post(
-        `http://localhost:8000/${isSignUp ? "signup" : "login"}`,
+        `https://tinder-casafurix.herokuapp.com/${
+          isSignUp ? "signup" : "login"
+        }`,
         {
           email,
           password,

@@ -14,9 +14,12 @@ function Dashboard() {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/user", {
-        params: { userId },
-      });
+      const response = await axios.get(
+        "https://tinder-casafurix.herokuapp.com/user",
+        {
+          params: { userId },
+        }
+      );
       setUser(response.data);
     } catch (err) {
       console.log(err);
@@ -25,9 +28,12 @@ function Dashboard() {
 
   const getGenderedUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/gendered-users", {
-        params: { gender: user?.gender_interest },
-      });
+      const response = await axios.get(
+        "https://tinder-casafurix.herokuapp.com/gendered-users",
+        {
+          params: { gender: user?.gender_interest },
+        }
+      );
       setGenderedUsers(response.data);
     } catch (err) {
       console.log(err);
@@ -48,7 +54,7 @@ function Dashboard() {
 
   const updateMatches = async (matchedUserId) => {
     try {
-      await axios.put("http://localhost:8000/addmatch", {
+      await axios.put("https://tinder-casafurix.herokuapp.com/addmatch", {
         userId,
         matchedUserId,
       });

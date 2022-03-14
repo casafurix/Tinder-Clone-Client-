@@ -12,9 +12,12 @@ function ChatDisplay({ user, clickedUser }) {
 
   const getUserMessages = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/messages", {
-        params: { userId: userId, correspondingUserId: clickedUserId },
-      });
+      const response = await axios.get(
+        "https://tinder-casafurix.herokuapp.com/messages",
+        {
+          params: { userId: userId, correspondingUserId: clickedUserId },
+        }
+      );
       setUserMessages(response.data);
     } catch (err) {
       console.log(err);
@@ -22,9 +25,12 @@ function ChatDisplay({ user, clickedUser }) {
   };
   const getClickedUserMessages = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/messages", {
-        params: { userId: clickedUserId, correspondingUserId: userId },
-      });
+      const response = await axios.get(
+        "https://tinder-casafurix.herokuapp.com/messages",
+        {
+          params: { userId: clickedUserId, correspondingUserId: userId },
+        }
+      );
       setClickedUserMessages(response.data);
     } catch (err) {
       console.log(err);

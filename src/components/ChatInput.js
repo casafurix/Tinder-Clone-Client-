@@ -21,7 +21,7 @@ function ChatInput({
     };
 
     try {
-      await axios.post("http://localhost:8000/message", {
+      await axios.post("https://tinder-casafurix.herokuapp.com/message", {
         message,
       });
       getUserMessages();

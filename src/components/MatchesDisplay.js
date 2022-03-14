@@ -13,7 +13,7 @@ function MatchesDisplay({ matches, setClickedUser }) {
   const getMatches = async () => {
     try {
       const response = await axios.get(
-        "https://tinder-casafurix.herokuapp.com/user",
+        "https://tinder-casafurix.herokuapp.com/gendered-users",
         {
           params: { userIds: JSON.stringify(matchedUserIds) },
         }

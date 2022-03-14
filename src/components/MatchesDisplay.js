@@ -9,7 +9,7 @@ function MatchesDisplay({ matches, setClickedUser }) {
   const userId = cookies.UserId;
 
   const matchedUserIds = matches.map(({ user_id }) => user_id);
-
+  //final fix
   const getMatches = async () => {
     try {
       const response = await axios.get(
